@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "start": "vuepress dev docs",
-    "build": "vuepress build docs"
+    "docs:build": "vuepress build docs"
   },
   "author": "",
   "license": "ISC",

@@ -1,4 +1,5 @@
 module.exports = {
+    base: '/vue-sample/',
     title: 'Vue-Example-Ui',
     description: '各种VUE相关UI页面组件的代码、写法、思路、样例。',
     head: [
