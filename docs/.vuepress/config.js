@@ -1,6 +1,6 @@
 module.exports = {
     base: '/vue-sample/',
-    title: 'Vue-Example-Ui',
+    title: 'Vue-Sample',
     description: '各种VUE相关UI页面组件的代码、写法、思路、样例。',
     head: [
         ['link', { rel: 'stylesheet', type: "text/css", href: '/icomoon.css' }],
@@ -15,7 +15,7 @@ module.exports = {
             { text: 'UI', link: '/ui/' },
             { text: 'JS', link: '/js/' },
             { text: 'CSS', link: '/css/' },
-            { text: 'GITHUB', link: 'https://github.com' },
+            { text: 'GITHUB', link: 'https://github.com/midcu/vue-sample' },
         ],
         sidebarDepth: 2,
         sidebar: {
