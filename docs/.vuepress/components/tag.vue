@@ -27,12 +27,12 @@ export default {
     white-space: nowrap;
     height: 27px;
     color: #fff;
-    background: #c5c5c5;
+    background: #3eaf7c;
     text-align: center;
     line-height: 25px;
     cursor: pointer;
     border-radius: 3px;
-    border: 1px solid #c5c5c5;
+    border: 1px solid #3eaf7c;
     box-shadow: 0 1px 1px 0 rgb(0 0 0 / 10%);
     box-sizing: border-box;
     padding: 0 10px;

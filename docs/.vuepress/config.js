@@ -27,8 +27,10 @@ module.exports = {
                     collapsable: false,
                     children: [
                         "",
-                        "transition",
-                        "tag"
+                        "tag",
+                        "button",
+                        "tree-menu",
+                        "transition"
                     ]
                 },
             ],

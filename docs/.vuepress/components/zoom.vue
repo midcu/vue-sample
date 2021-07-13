@@ -8,9 +8,7 @@
 import viewZoom from '../js/zoom'
 export default {
     mounted() {
-        var vZoom = { };
-        vZoom.__proto__ = viewZoom.prototype;
-
+        var vZoom = new viewZoom();
         vZoom.addEvent(document.getElementById("zoom"))
     }
 }
