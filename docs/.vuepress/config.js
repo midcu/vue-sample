@@ -4,6 +4,7 @@ module.exports = {
     description: '各种VUE相关UI页面组件的代码、写法、思路、样例。',
     head: [
         ['link', { rel: 'stylesheet', type: "text/css", href: '/icomoon.css' }],
+        ['meta', { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1' }],
         ['link', { rel: 'icon', href: '/favicon.ico' }]
     ],
     markdown: {
@@ -37,7 +38,8 @@ module.exports = {
                     path: '',
                     collapsable: false,
                     children: [
-                        ""
+                        "",
+                        "zoom"
                     ]
                 },
             ],
