@@ -41,7 +41,8 @@ module.exports = {
                     collapsable: false,
                     children: [
                         "",
-                        "zoom"
+                        "zoom",
+                        "scrollBarWidth"
                     ]
                 },
             ],
