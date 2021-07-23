@@ -1,3 +1,8 @@
+
+import Vue from 'vue';
+
+const isServer = Vue.prototype.$isServer;
+
 export function hasClass(el, cls) {
     if (!el || !cls) return false;
     if (el.classList) {
@@ -46,7 +51,7 @@ export function removeClass(el, cls) {
 };
 
 export function on (element, event, handler) {
-    if (element && event && handler) {
+    if (!isServer && element && event && handler) {
         if (document.addEventListener) {
             element.addEventListener(event, handler, false);
         } else {
@@ -56,7 +61,7 @@ export function on (element, event, handler) {
 };
 
 export function off (element, event, handler) {
-    if (element && event && handler) {
+    if (!isServer && element && event && handler) {
         if (document.removeEventListener) {
             element.removeEventListener(event, handler, false);
         } else {
@@ -69,7 +74,7 @@ var scrollBarWidth = undefined;
 
 export function getScrollBarWidth () {
 
-    if (scrollBarWidth !== undefined) {
+    if (scrollBarWidth !== undefined || isServer) {
         return scrollBarWidth;
     }
 
