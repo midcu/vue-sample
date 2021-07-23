@@ -44,3 +44,48 @@ export function removeClass(el, cls) {
         el.setAttribute('class', trim(curClass));
     }
 };
+
+export function on (element, event, handler) {
+    if (element && event && handler) {
+        if (document.addEventListener) {
+            element.addEventListener(event, handler, false);
+        } else {
+            element.attachEvent('on' + event, handler);
+        }
+    }
+};
+
+export function off (element, event, handler) {
+    if (element && event && handler) {
+        if (document.removeEventListener) {
+            element.removeEventListener(event, handler, false);
+        } else {
+            element.detachEvent('on' + event, handler);
+        }
+    }
+};
+
+var scrollBarWidth = undefined;
+
+export function getScrollBarWidth () {
+
+    if (scrollBarWidth !== undefined) {
+        return scrollBarWidth;
+    }
+
+    var outer = document.createElement('div');
+
+    outer.style.visibility = 'hidden';
+    outer.style.width = '100px';
+    outer.style.position = 'absolute';
+    outer.style.top = '-9999px';
+    outer.style.overflow = 'scroll';
+
+    document.body.appendChild(outer);
+
+    scrollBarWidth = outer.offsetWidth - outer.clientWidth;
+    
+    outer.parentNode.removeChild(outer);
+
+    return scrollBarWidth;
+}

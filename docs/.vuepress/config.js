@@ -30,7 +30,8 @@ module.exports = {
                         "tag",
                         "button",
                         "tree-menu",
-                        "transition"
+                        "transition",
+                        "scrollbar"
                     ]
                 },
             ],
