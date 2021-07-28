@@ -1,7 +1,7 @@
 module.exports = {
     base: '/vue-sample/',
     title: 'Vue-Sample',
-    description: '各种VUE相关UI页面组件的代码、写法、思路、样例。',
+    description: '各种VUE相关UI页面组件的代码、思路、样例。',
     head: [
         ['link', { rel: 'stylesheet', type: "text/css", href: '/icomoon.css' }],
         ['meta', { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1' }],
@@ -29,6 +29,7 @@ module.exports = {
                         "",
                         "tag",
                         "button",
+                        "affix",
                         "tree-menu",
                         "transition",
                         "scrollbar"
