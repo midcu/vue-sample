@@ -1,12 +1,14 @@
-import { getScrollBarWidth, on, off } from "./dom.js"
-import Barb from "./bar.js";
+import { getScrollBarWidth, addResizeListener} from "./dom.js"
+import Bar from "./bar.js";
 export default {
-    name: "scrollbar",
+    name: "va-scrollbar",
     components: {
-        bar: Barb
+        bar: Bar
     },
     data: function() {
         return {
+            resize: false,
+            observer: null,
             sizeWidth: '0',
             sizeHeight: '0',
             moveX: 0,
@@ -16,7 +18,7 @@ export default {
     render: function(h) {
         let barWidth = getScrollBarWidth();
         let style = "width: calc(100% + " + barWidth + "px); height: calc(100% + " + barWidth + "px); overflow: scroll;";
-        let wrap = h("div", { ref: "wrap", style: style, on: { scroll: () => this.wrapScroll() } }, [h('div', { ref: 'resize' } , [this.$slots.default])]);
+        let wrap = h("div", { ref: "wrap", style: style, on: { scroll: () => this.wrapScroll() } }, [h('div', { ref: 'resize', class: "aaaaaaaa" } , [this.$slots.default])]);
 
         return h("div", { class: "va-scrollbar" }, [
             wrap, 
@@ -28,7 +30,9 @@ export default {
     mounted: function() {
         this.$nextTick(() => {
             this.update();
-            this.$refs.resize && on(this.$refs.resize, 'resize', this.update);
+            if (this.$refs.resize && this.resize) {
+                this.observer = addResizeListener(this.$refs.resize, () => this.update());
+            }
         });
     },
     methods: {
@@ -52,6 +56,8 @@ export default {
         }
     },
     beforeDestroy: function() {
-        this.$refs.resize && off(this.$refs.resize, 'resize', this.update)
+        if (this.observer) {
+            this.observer.disconnect();
+        }
     }
 }
